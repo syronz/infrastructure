@@ -1,0 +1,46 @@
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	flex-direction: column;
+}
+
+section img {
+	margin-bottom: 25px;
+	width: 330px;
+}
+
+.login-container {
+	display: flex;
+	width: 300px;
+	flex-direction: column;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-form > * {
+	width: 100%;
+}
+
+.login-right-align {
+	text-align: right;
+}
+
+input.login-right-align::-webkit-outer-spin-button,
+input.login-right-align::-webkit-inner-spin-button {
+	display: none;
+}
+
+input.login-right-align {
+	-moz-appearance: textfield;
+}
+
+
+section h4 {
+	font-weight: normal;
+	color: #AAA;
+}

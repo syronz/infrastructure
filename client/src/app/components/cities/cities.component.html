@@ -1,0 +1,55 @@
+<app-loading-spinner #loadingSpinner></app-loading-spinner>
+<article [ngClass]="{'blurContent': loading.isSpinnerVisable}">
+	<div class="pageTitle mat-elevation-z6">
+		<div class="target">
+			<button class="target-part" mat-button [routerLink]="['/cities']">{{ 'Cities' | t }}</button>
+			<button mat-raised-button [routerLink]="['/cities/new']" > {{ 'New City' | t }} </button>
+		</div>
+		<form class="searchForm" (ngSubmit)="doSearch()">
+			<mat-form-field class="searchInput">
+				<input matInput #searchBar placeholder="{{ 'search' | t }}" >
+			</mat-form-field>
+				<button mat-icon-button type="submit"> <mat-icon>search</mat-icon></button>
+		</form>
+
+	</div>
+
+	<div class="panel-container mat-elevation-z8">
+		<div class="table-container">
+
+			<table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
+				<ng-container matColumnDef="id">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+					<td mat-cell *matCellDef="let element"> {{element.id}} </td>
+				</ng-container>
+				<ng-container matColumnDef="governorate">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Governorate' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.governorate}} </td>
+				</ng-container>
+				<ng-container matColumnDef="city">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'City' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.city}} </td>
+				</ng-container>
+				<ng-container matColumnDef="view" stickyEnd>
+					<th mat-header-cell *matHeaderCellDef> {{ 'View' | t }} </th>
+					<td mat-cell *matCellDef="let element">
+						<a [routerLink]="['/cities/',element.id]" >{{ 'View' | t }}</a>
+					</td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+			</table>
+		</div>
+
+		<mat-paginator #paginator [length]="count"
+								 [pageSize]="perPage"
+								 [pageSizeOptions]="perPageOptions"
+								 (page)="pageEvent = loadPaginator($event);">
+		</mat-paginator>
+
+	</div>
+
+</article>
+

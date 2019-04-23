@@ -1,0 +1,43 @@
+/* for sidebar */
+.main-container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+}
+
+.main-is-mobile app-navbar{
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+}
+
+h1.main-app-name {
+	margin-left: 8px;
+}
+
+.main-sidenav-container {
+	flex: 1;
+}
+
+.main-is-mobile .main-sidenav-container {
+	flex: 1 0 auto;
+}
+
+mat-sidenav {
+	width: 200px;
+}
+
+mat-sidenav-container {
+	height: 100vh;
+}
+
+mat-sidenav-content {
+
+	/*height: 100vh - 66px;*/
+}
+

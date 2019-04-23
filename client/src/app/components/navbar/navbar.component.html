@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="main-toolbar">
+
+	<button mat-icon-button (click)="toggleNav()"> <mat-icon>menu</mat-icon></button>
+	<button mat-button [routerLink]="['/home']" > {{ 'Home' | t }} </button>
+	<button mat-button [routerLink]="['/profile']" > {{ userName?.name }} </button>
+
+	<span class="make-space">
+		<img src="assets/images/logos/logo.png">
+	</span>
+
+	<button mat-button [routerLink]="['/login']"> {{ 'Logout' | t }} </button>
+	
+
+</mat-toolbar>
+

@@ -1,0 +1,11 @@
+mat-icon {
+	margin-right: 15px;
+}
+
+mat-list {
+	user-select: none;
+}
+
+.matContainPart {
+	overflow: hidden;
+}

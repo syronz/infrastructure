@@ -1,0 +1,32 @@
+.pageTitle {
+	height: 65.5px;
+}
+
+article{
+	padding: 0 12px;
+	margin-bottom: 75px;
+}
+
+.blurContent {
+	filter: blur(2px);
+}
+
+.panel-container {
+	margin-top: 15px;
+}
+
+.form-container {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+
+}
+
+.form-container > form {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+
+

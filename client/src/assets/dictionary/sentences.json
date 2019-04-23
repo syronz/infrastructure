@@ -1,0 +1,64 @@
+{
+	"hello": { "en": "Hi", "ku": "slaw", "ar": "alsalam" },
+	"blank": { "en": "", "ku": "", "ar": "" },
+
+
+	"Users": { "en": "Users", "ku": "Bakarhenaran", "ar": "Al Users" },
+	"Add New User": { "en": "Add New User", "ku": "Ziad Krdni User", "ar": "Al Users" },
+	"search": { "en": "search", "ku": "garan", "ar": "search" },
+	"ID": { "en": "ID", "ku": "ID", "ar": "ID" },
+	"Name": { "en": "Name", "ku": "Name", "ar": "Name" },
+	"Username": { "en": "Username", "ku": "Username", "ar": "Username" },
+	"Role": { "en": "Role", "ku": "Role", "ar": "Role" },
+	"City": { "en": "City", "ku": "shar", "ar": "City" },
+	"Director": { "en": "Director", "ku": "Director", "ar": "Director" },
+	"Lang": { "en": "Lang", "ku": "Lang", "ar": "Lang" },
+	"View": { "en": "View", "ku": "binin", "ar": "View" },
+	"Home": { "en": "Home", "ku": "saraki", "ar": "Home" },
+	"Delete": { "en": "Delete", "ku": "Delete", "ar": "Delete" },
+	"Submit": { "en": "Submit", "ku": "Submit", "ar": "Submit" },
+	"Password": { "en": "Password", "ku": "Password", "ar": "Password" },
+	"Leave it blanck if you don't want change it": { "en": "Leave it blanck if you don't want change it", "ku": "Leave it blanck if you don't want change it", "ar": "Leave it blanck if you don't want change it" },
+	"New Password": { "en": "New Password", "ku": "New Password", "ar": "New Password" },
+	"New User": { "en": "New User", "ku": "useri nwe", "ar": "New User" },
+	"Confirm Password": { "en": "Confirm Password", "ku": "Confirm Password", "ar": "Confirm Password" },
+	"Language": { "en": "Language", "ku": "Language", "ar": "Language" },
+	"Passwords not match": { "en": "Passwords not match", "ku": "Passwords not match", "ar": "Passwords not match" },
+	"English": { "en": "English", "ku": "English", "ar": "English" },
+	"Kurdish": { "en": "Kurdish", "ku": "Kurdish", "ar": "Kurdish" },
+	"Arabic": { "en": "Arabic", "ku": "Arabic", "ar": "Arabic" },
+	"Admin": { "en": "Admin", "ku": "Admin", "ar": "Admin" },
+	"User": { "en": "User", "ku": "User", "ar": "User" },
+	"User Created Successfully": { "en": "User Created Successfully", "ku": "User Created Successfully", "ar": "User Created Successfully" },
+	"User Updated Successfully": { "en": "User Updated Successfully", "ku": "Useraka update boo", "ar": "User Updated Successfully" },
+	"OK": { "en": "OK", "ku": "OK", "ar": "OK" },
+	"Cities": { "en": "Cities", "ku": "Sharakan", "ar": "Cities" },
+	"Governorate": { "en": "Governorate", "ku": "Parezga", "ar": "Governorate" },
+	"New City": { "en": "New City", "ku": "Shari Nwe", "ar": "New City" },
+	"Erbil": { "en": "Erbil", "ku": "Hawler", "ar": "Erbil" },
+	"Sulaimaniyah": { "en": "Sulaimaniyah", "ku": "Slemany", "ar": "Sulaimaniyah" },
+	"Welcome": { "en": "Welcome", "ku": "Welcome", "ar": "Welcome" },
+	"Profile": { "en": "Profile", "ku": "profile", "ar": "Profile" },
+	"Logout": { "en": "Logout", "ku": "Logout", "ar": "Logout" },
+	"Change Password": { "en": "Change Password", "ku": "Change Password", "ar": "Change Password" },
+	"Activity": { "en": "Activity", "ku": "Activity", "ar": "Activity" },
+	"Event": { "en": "Event", "ku": "Event", "ar": "Event" },
+	"Date": { "en": "Date", "ku": "Date", "ar": "Date" },
+	"IP": { "en": "IP", "ku": "IP", "ar": "IP" },
+	"Description": { "en": "Description", "ku": "Description", "ar": "Description" },
+	"Directors": { "en": "Directors", "ku": "Directors", "ar": "Directors" },
+	"Detail": { "en": "Detail", "ku": "Detail", "ar": "Detail" },
+	"New Director": { "en": "New Director", "ku": "bashi nwe", "ar": "NewDirector" },
+	"Activities": { "en": "Activities", "ku": "Activities", "ar": "Activities" },
+	"Manage": { "en": "Manage", "ku": "rekxstn", "ar": "Manage" },
+	"Reports": { "en": "Reports", "ku": "raportakan", "ar": "Reports" },
+
+
+
+
+
+
+
+
+	"bye": { "en": "Bye", "ku": "xwa hafez", "ar": "ma asalam" }
+}

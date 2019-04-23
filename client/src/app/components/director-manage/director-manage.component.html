@@ -1,0 +1,32 @@
+<app-loading-spinner #loadingSpinner></app-loading-spinner>
+
+<article [ngClass]="{'blurContent': loading.isSpinnerVisable}">
+	<div class="pageTitle mat-elevation-z6">
+		<button mat-button [routerLink]="['/directors']">{{ 'Directors' | t }}</button>
+		>
+		<button mat-button *ngIf="!isNew">{{ dataInfo?.director }}</button>
+		<button mat-button *ngIf="isNew">{{ 'New Director' | t }}</button>
+		<span class="make-space"></span>
+		<button mat-raised-button color="warn" (click)="delete()"> {{ 'Delete' | t }} </button>
+	</div>
+
+	<div class="panel-container mat-elevation-z8">
+		<div class="form-container">
+			<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Director' | t }}" #director formControlName="director" type="text">
+					<mat-icon matSuffix>account_balance</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Detail' | t }}" #detail formControlName="detail" type="text">
+					<mat-icon matSuffix>feedback</mat-icon>
+				</mat-form-field>
+				<p class="error-message" *ngIf="error"> {{ error.error?.message }} </p>
+				<button mat-raised-button type="submit" > {{ 'Submit' | t }} </button>
+			</form>
+		</div>
+	</div>
+
+</article>
+
+

@@ -1,0 +1,68 @@
+<app-loading-spinner #loadingSpinner></app-loading-spinner>
+
+<article [ngClass]="{'blurContent': loading.isSpinnerVisable}">
+	<div class="pageTitle mat-elevation-z6">
+		<button mat-button [routerLink]="['/users']">{{ 'Users' | t }}</button>
+		>
+		<button mat-button *ngIf="!isNew">{{ userInfo?.name }}</button>
+		<button mat-button *ngIf="isNew">{{ 'New User' | t }}</button>
+		<span class="make-space"></span>
+		<button mat-raised-button color="warn" (click)="delete()"> {{ 'Delete' | t }} </button>
+	</div>
+
+	<div class="panel-container mat-elevation-z8">
+		<div class="form-container">
+			<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Name' | t }}" #name formControlName="name" type="text">
+					<mat-icon matSuffix>perm_contact_calendar</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Username' | t }}" #username formControlName="username" type="text">
+					<mat-icon matSuffix>account_circle</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<!--
+					<input matInput placeholder="{{ 'Role' | t }}" #role formControlName="role" type="text">
+					<mat-icon matSuffix>security</mat-icon>
+					-->
+					<mat-label>{{ 'Role' | t }} </mat-label>
+					<mat-select formControlName="role" [value]="userForm.controls['role'].value">
+						<mat-option value="admin"> {{ 'Admin' | t }} </mat-option>
+						<mat-option value="user"> {{ 'User' | t }} </mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'City' | t }}" #city formControlName="city" type="text">
+					<mat-icon matSuffix>location_city</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Director' | t }}" #director formControlName="director" type="text">
+					<mat-icon matSuffix>next_week</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>{{ 'Language' | t }}</mat-label>
+					<mat-select formControlName="language" [value]="userForm.controls['language'].value">
+						<mat-option value="en"> {{ 'English' | t }} </mat-option>
+						<mat-option value="ku"> {{ 'Kurdish' | t }} </mat-option>
+						<mat-option value="ar"> {{ 'Arabic' | t }} </mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field  appearance="outline">
+					<mat-label> {{ 'Password' | t }} </mat-label>
+					<input matInput placeholder="{{ 'Password' | t }}" #password formControlName="password" type="password">
+					<mat-icon matSuffix>vpn_key</mat-icon>
+					<mat-hint *ngIf="!isNew"> {{ "Leave it blanck if you don't want change it" | t }} </mat-hint>
+				</mat-form-field>
+				<mat-form-field  appearance="outline">
+					<mat-label> {{ 'Confirm Password' | t }} </mat-label>
+					<input matInput placeholder="{{ 'Password' | t }}" #confirmPassword formControlName="confirmPassword" type="password">
+					<mat-icon matSuffix>vpn_key</mat-icon>
+				</mat-form-field>
+				<p class="error-message" *ngIf="error"> {{ error.error?.message }} </p>
+				<button mat-raised-button type="submit" > {{ 'Submit' | t }} </button>
+			</form>
+		</div>
+	</div>
+
+</article>

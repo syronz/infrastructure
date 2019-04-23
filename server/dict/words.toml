@@ -1,0 +1,45 @@
+["City with this name entered before"]
+en = "City with this name entered before"
+ku = "Shar baw nawa peshter daxl krawa"
+ar = "Al madina with this name already defined"
+
+["Internal Error"]
+en = "Internal Error"
+ku = "Keshay nawxo"
+ar = "Aldaxeli maslat"
+
+[host3]
+en = "Internal Error"
+ku = "Keshay nawxo"
+ar = "Aldaxeli maslat"
+
+
+["City must be more than 2 charachter!"]
+en = "City must be more than 2 charachter!!"
+ku = "nawi shar abe lani kam 2 harf be"
+ar = "madinatol raqam la kafi"
+
+["Error happened"]
+en = "Error happened"
+ku = "Hala rooy dawa"
+ar = "alxata almostaqar"
+
+["ID must be number"]
+en = "ID must be number"
+ku = "idekay dabe zhmara be"
+
+["User updated successfully"]
+en = "User updated successfully"
+ku = "Useraka ba sarkawtuyi update boo"
+ar = "Al user updated successfully"
+
+["You don't have permission"]
+en = "You don't have permission"
+ku = "regapedraw nie bo userakat"
+ar = "almamnooe almal"
+
+["DELETED USER"]
+en = "DELETED USER"
+ku = "Useri Srawa"
+ar = "User Ma Mojud"
+

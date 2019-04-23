@@ -1,0 +1,52 @@
+<mat-list role="list">
+
+	<mat-list-item role="listitem" [routerLink]="['/home']">
+		<mat-icon>home</mat-icon>
+		<span> {{ 'Home' | t }} </span>
+	</mat-list-item>
+	<mat-divider></mat-divider>
+
+	<mat-list-item role="listitem" (click)="toggleState('manage')"
+		*ngIf="userAcl.Read.includes('users') || userAcl.Read.includes('cities') || userAcl.Read.includes('directors')" >
+		<mat-icon>palette</mat-icon>
+		<span> {{ 'Manage' | t }} </span>
+	</mat-list-item>
+	<mat-list class="matContainPart" [@menuState]="sidebarItems.manage" role="list"
+		*ngIf="userAcl.Read.includes('users') || userAcl.Read.includes('cities') || userAcl.Read.includes('directors')" >
+		<mat-list-item role="listitem" [routerLink]="['/users']" *ngIf="userAcl.Read.includes('users')">
+			<mat-icon>people</mat-icon>
+			{{ 'Users' | t }}
+		</mat-list-item>
+		<mat-list-item role="listitem" [routerLink]="['/cities']" *ngIf="userAcl.Read.includes('cities')" >
+			<mat-icon>location_city</mat-icon>
+			{{ 'Cities' | t }}
+		</mat-list-item>
+		<mat-list-item role="listitem" [routerLink]="['/directors']" *ngIf="userAcl.Read.includes('directors')">
+			<mat-icon>account_balance</mat-icon>
+			{{ 'Directors' | t }}
+		</mat-list-item>
+	</mat-list>
+	<mat-divider></mat-divider>
+
+	
+	<mat-list-item role="listitem" (click)="toggleState('reports')" 
+		*ngIf="userAcl.Read.includes('activities')" >
+		<mat-icon>pie_chart</mat-icon>
+		<span> {{ 'Reports' | t }} </span>
+	</mat-list-item>
+	<mat-list class="matContainPart" [@menuState]="sidebarItems.reports" role="list" 
+		*ngIf="userAcl.Read.includes('activities')" >
+		<mat-list-item role="listitem" [routerLink]="['/activities']" *ngIf="userAcl.Read.includes('activities')">
+			<mat-icon>photo_camera</mat-icon>
+			{{ 'Activity' | t }}
+		</mat-list-item>
+	</mat-list>
+	<mat-divider></mat-divider>
+
+	<mat-list-item role="listitem" [routerLink]="['/profile']">
+		<mat-icon>person</mat-icon>
+		{{ 'Profile' | t }}
+	</mat-list-item>
+	<mat-divider></mat-divider>
+
+</mat-list>

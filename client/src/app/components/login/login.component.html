@@ -1,0 +1,23 @@
+<section>
+		<img src="/assets/images/logos/logo.png" >
+	<mat-card class="login-container">
+		<form [formGroup]="loginForm" class="login-form"  (ngSubmit)="onSubmit()">
+			<mat-form-field>
+				<input matInput placeholder="username" #username formControlName="username" type="text">
+				<mat-icon matSuffix>account_circle</mat-icon>
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="password" formControlName="password" [type]="hide ? 'password' : 'text'">
+				<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+			</mat-form-field>
+			<p class="error-message" *ngIf="error"> {{ error.error?.message }} </p>
+			<button mat-button type="submit" color="primary"  > Login </button>
+		</form>
+
+	</mat-card>
+
+	<h4>
+		© 2019. all right reserved by ERP 14
+	</h4>
+</section>
+

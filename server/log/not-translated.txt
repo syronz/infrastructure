@@ -1,0 +1,78 @@
+Duplication for city
+Duplication for city1
+ID must be integer
+City deleted successfully
+Data for city required
+Page size must be number
+Unable to retrieve data
+Unable to retrieve data for cities
+Unable to retrieve cities data
+Problem in scan to the struct in cities
+List of cities
+Error in get city
+Problem in scanning city
+Governorate and city are required
+Name of City and Governorate must be at least two character
+Error happened
+Error in inserting city to the database
+Duplication happened in city insertion
+City created successfully
+ID must be number
+Error in deleting city
+ID mus be number
+
+idekay dabe zhmara be
+Data is required for update the city
+Error in updating the city
+City updated successfully
+Username must be more than 2 charachter and password at least must be 8 character!
+Username must be at least 2 and password must be at least 8 character
+Username and Password must be at least two character
+Error in inserting user to the database
+Duplication happened in user insertion
+User created successfully
+User deleted successfully
+Error in updating the user
+User updated successfully
+Username and Password must be at least six character
+Duplication for user
+Unable to retrieve users data
+Problem in scan to the struct in users
+List of users
+Problem in scanning user
+Data of the user
+Data of the city
+Authentication failed
+Username or password are wrong
+Username and password are required
+Error in generate JWT
+Problem with getting user's information
+You don't have permission
+Username or password is incorrect
+User's data
+ID must be a number
+Username must be at least six character
+Username must be at least four character
+Name must be at least four character
+Username must be at least five character
+This username already exist
+Password must be at leas eight character
+Red fields are required
+User can not delete own account
+User's profile
+Profile updated successfully
+File is not image
+Error in getting file
+File must be less than 5MB
+Avatar uploaded successfully
+Unable to retrieve activities data
+Problem in scan to the struct in activities
+Count can't be calculated for activities
+List of activities
+Name of City must be at least two character
+Director created successfully
+Data of the director
+Duplication happened in director insertion
+List of directors
+Director deleted successfully
+Director updated successfully

@@ -1,0 +1,16 @@
+.make-space {
+	flex: 1 1 auto;
+	text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+	.make-space img {
+		display: none;
+	}
+}
+
+
+.make-space img {
+	height: 62px;
+	margin-top: 9px;
+}

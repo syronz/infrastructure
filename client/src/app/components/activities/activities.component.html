@@ -1,0 +1,61 @@
+<app-loading-spinner #loadingSpinner></app-loading-spinner>
+<article [ngClass]="{'blurContent': loading.isSpinnerVisable}">
+	<div class="pageTitle mat-elevation-z6">
+		<div class="target">
+			<button class="target-part" mat-button [routerLink]="['/activities']">{{ 'Activities' | t }}</button>
+		</div>
+		<form class="searchForm" (ngSubmit)="doSearch()">
+			<mat-form-field class="searchInput">
+				<input matInput #searchBar placeholder="{{ 'search' | t }}" >
+			</mat-form-field>
+				<button mat-icon-button type="submit"> <mat-icon>search</mat-icon></button>
+		</form>
+
+	</div>
+
+	<div class="panel-container mat-elevation-z8">
+		<div class="table-container">
+
+			<table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
+				<ng-container matColumnDef="id">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+					<td mat-cell *matCellDef="let element"> {{element.id}} </td>
+				</ng-container>
+				<ng-container matColumnDef="event">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Event' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.event}} </td>
+				</ng-container>
+				<ng-container matColumnDef="user">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'User' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.user}} </td>
+				</ng-container>
+				<ng-container matColumnDef="date">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Date' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.created_at}} </td>
+				</ng-container>
+				<ng-container matColumnDef="ip">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'IP' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.ip}} </td>
+				</ng-container>
+				<ng-container matColumnDef="description">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Description' | t }} </th>
+					<td mat-cell *matCellDef="let element"> {{element.description}} </td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+			</table>
+		</div>
+
+		<mat-paginator #paginator [length]="count"
+								 [pageSize]="perPage"
+								 [pageSizeOptions]="perPageOptions"
+								 (page)="pageEvent = loadPaginator($event);">
+		</mat-paginator>
+
+	</div>
+
+</article>
+
+

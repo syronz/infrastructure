@@ -1,0 +1,8 @@
+[admin]
+read = ["users", "cities", "reports", "activities", "directors"]
+write = ["users", "cities", "reports", "activities", "directors"]
+
+[user]
+read = ["users","reportes"]
+
+

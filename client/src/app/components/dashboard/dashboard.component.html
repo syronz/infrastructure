@@ -1,0 +1,18 @@
+<div class="main-container" [class.main-is-mobile]="mobileQuery.matches">
+	<app-navbar (sideStatus)="showMSG($event)"> </app-navbar>
+
+
+	<mat-sidenav-container calss="main-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+		<mat-sidenav #snav [opened]="currentSideStatus" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+			<app-sidebar></app-sidebar>
+		</mat-sidenav>
+
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+			<!--
+			<div style="background-color:#EEE; height: 120px; border: 1px solid red;" class="footer"> This is footer </div>
+			-->
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+
+</div>
