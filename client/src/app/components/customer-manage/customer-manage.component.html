@@ -1,0 +1,53 @@
+<app-loading-spinner #loadingSpinner></app-loading-spinner>
+
+<article [ngClass]="{'blurContent': loading.isSpinnerVisable}">
+	<div class="pageTitle mat-elevation-z6">
+		<button mat-button [routerLink]="['/customers']">{{ 'Customers' | t }}</button>
+		>
+		<button mat-button *ngIf="!isNew">{{ dataInfo?.name }}</button>
+		<button mat-button *ngIf="isNew">{{ 'New Customer' | t }}</button>
+		<span class="make-space"></span>
+		<button mat-raised-button color="warn" (click)="delete()" *ngIf="!isNew"> {{ 'Delete' | t }} </button>
+	</div>
+
+	<div class="panel-container mat-elevation-z8">
+		<div class="form-container">
+			<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+				<mat-form-field>
+					<mat-label>{{ 'Title' | t }} </mat-label>
+					<mat-select formControlName="title" [value]="dataForm.controls['title'].value">
+						<mat-option value="Dear"> {{ 'Dear' | t }} </mat-option>
+						<mat-option value="Dr."> {{ 'Dr.' | t }} </mat-option>
+						<mat-option value="Mr."> {{ 'Mr.' | t }} </mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Customer Name' | t }}" #name formControlName="name" type="text">
+					<mat-icon matSuffix>face</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Phone 1' | t }}" #phone1 formControlName="phone1" type="text">
+					<mat-icon matSuffix>phone</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Phone 2' | t }}" #phone2 formControlName="phone2" type="text">
+					<mat-icon matSuffix>phone_paused</mat-icon>
+				</mat-form-field>
+				<mat-form-field *ngIf="!isNew">
+					<input matInput disabled placeholder="{{ 'Created At' | t }}" [value]="dataForm.controls['createdAt'].value" type="text">
+					<mat-icon matSuffix>date_range</mat-icon>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="{{ 'Detail' | t }}" #detail formControlName="detail" type="text">
+					<mat-icon matSuffix>notes</mat-icon>
+				</mat-form-field>
+				<p class="error-message" *ngIf="error"> {{ error.error?.message }} </p>
+				<button mat-raised-button type="submit" > {{ 'Submit' | t }} </button>
+			</form>
+		</div>
+	</div>
+
+</article>
+
+
+

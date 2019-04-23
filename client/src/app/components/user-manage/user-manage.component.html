@@ -7,7 +7,7 @@
 		<button mat-button *ngIf="!isNew">{{ userInfo?.name }}</button>
 		<button mat-button *ngIf="isNew">{{ 'New User' | t }}</button>
 		<span class="make-space"></span>
-		<button mat-raised-button color="warn" (click)="delete()"> {{ 'Delete' | t }} </button>
+		<button mat-raised-button color="warn" (click)="delete()" *ngIf="!isNew"> {{ 'Delete' | t }} </button>
 	</div>
 
 	<div class="panel-container mat-elevation-z8">

@@ -28,6 +28,13 @@
 	</mat-list>
 	<mat-divider></mat-divider>
 
+
+	<mat-list-item role="listitem" [routerLink]="['/customers']" *ngIf="userAcl.Read.includes('customers')">
+		<mat-icon>face</mat-icon>
+		{{ 'Customers' | t }}
+	</mat-list-item>
+	<mat-divider></mat-divider>
+
 	
 	<mat-list-item role="listitem" (click)="toggleState('reports')" 
 		*ngIf="userAcl.Read.includes('activities')" >

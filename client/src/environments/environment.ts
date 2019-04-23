@@ -8,7 +8,7 @@ export const environment = {
 	snackBarDuration: 2000,
 	perPageOptions: [5, 10, 25, 100, 500],
 	//apiUrl: 'http://192.168.1.5:8000'
-	//apiUrl: 'http://192.168.17.131:8000'
+	//apiUrl: 'http://192.168.1.34:8000'
 	//apiUrl: ':8000'
 };
 

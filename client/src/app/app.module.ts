@@ -25,6 +25,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
 import { DirectorsComponent } from './components/directors/directors.component';
 import { DirectorManageComponent } from './components/director-manage/director-manage.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { CustomerManageComponent } from './components/customer-manage/customer-manage.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DirectorManageComponent } from './components/director-manage/director-m
 		ActivitiesComponent,
 		DirectorsComponent,
 		DirectorManageComponent,
+		CustomersComponent,
+		CustomerManageComponent,
   ],
   imports: [
     BrowserModule,

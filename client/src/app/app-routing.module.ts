@@ -13,6 +13,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
 import { DirectorsComponent } from './components/directors/directors.component';
 import { DirectorManageComponent } from './components/director-manage/director-manage.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { CustomerManageComponent } from './components/customer-manage/customer-manage.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
 					{ path: 'activities', component: ActivitiesComponent },	
 					{ path: 'directors', component: DirectorsComponent },	
 					{ path: 'directors/:id', component: DirectorManageComponent },	
+					{ path: 'customers', component: CustomersComponent },	
+					{ path: 'customers/:id', component: CustomerManageComponent },	
 				]
 			},
 		]

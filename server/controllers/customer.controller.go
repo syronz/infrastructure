@@ -68,7 +68,7 @@ func (r *CustomerResource) List(c *routing.Context) error {
 	var where string
 	if search != "" {
 		where = " WHERE title like '" + search +
-		"%' OR name like '" + search + "%' " +
+		"%' OR name like '%" + search + "%' " +
 		" OR phone1 like '" + search + "%' " +
 		" OR phone2 like '" + search + "%' " +
 		" OR id like '" + search + "'"

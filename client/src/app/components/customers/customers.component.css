@@ -1,0 +1,41 @@
+.pageTitle {
+	height: 65.5px;
+	display: flex;
+	justify-content: space-between;	
+}
+
+@media only screen and (max-width: 660px) {
+	.pageTitle > .target > .target-part {
+		display: none;
+	}
+
+	.pageTitle > .searchForm > .searchInput {
+		width: 120px;
+	}
+}
+
+article{
+	padding: 0 12px;
+}
+
+.blurContent {
+	filter: blur(2px);
+}
+
+.panel-container {
+	margin-top: 15px;
+}
+
+.panel-container .table-container {
+	width:100%;
+	overflow: auto;
+}
+
+table {
+	width: 100%;
+}
+
+.mat-row:nth-child(odd){
+	background-color:#eeeeee;
+}
+

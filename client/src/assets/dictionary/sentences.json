@@ -52,7 +52,16 @@
 	"Activities": { "en": "Activities", "ku": "Activities", "ar": "Activities" },
 	"Manage": { "en": "Manage", "ku": "rekxstn", "ar": "Manage" },
 	"Reports": { "en": "Reports", "ku": "raportakan", "ar": "Reports" },
-
+	"Customers": { "en": "Customers", "ku": "Kryar", "ar": "Customers" },
+	"New Customer": { "en": "New Customer", "ku": "Kryary nwe", "ar": "NewCustomer" },
+	"Title": { "en": "Title", "ku": "Title", "ar": "Title" },
+	"Phone 1": { "en": "Phone 1", "ku": "Phone 2", "ar": "Phone1" },
+	"Phone 2": { "en": "Phone 2", "ku": "Phone 2", "ar": "Phone2" },
+	"Dr.": { "en": "Dr", "ku": "doktor", "ar": "Dr" },
+	"Mr.": { "en": "Mr.", "ku": "kak", "ar": "." },
+	"Customer Name": { "en": "Customer Name", "ku": "nawi kryar", "ar": "CustomerName" },
+	"Dear": { "en": "Dear", "ku": "Dear", "ar": "Dear" },
+	"Created At": { "en": "Created At", "ku": "drwst kraw la", "ar": "Created At" },
 
 
 
