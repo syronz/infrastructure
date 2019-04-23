@@ -1,6 +1,6 @@
 [admin]
-read = ["users", "cities", "reports", "activities", "directors"]
-write = ["users", "cities", "reports", "activities", "directors"]
+read =  ["users", "cities", "reports", "activities", "directors", "customers"]
+write = ["users", "cities", "reports", "activities", "directors", "customers"]
 
 [user]
 read = ["users","reportes"]

@@ -76,3 +76,16 @@ Duplication happened in director insertion
 List of directors
 Director deleted successfully
 Director updated successfully
+Name must be at leas eight character
+Duplication happened in customer insertion
+Customer created successfully
+List of customers
+Problem in scanning customer
+Customer's data
+Customer deleted successfully
+Customer updated successfully
+Phone is wrong
+Error in inserting customer final part
+Duplication happened, use another number as phone1
+Error in update customer
+Dupplication happened

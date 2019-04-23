@@ -18,7 +18,7 @@ func AclChecker(part string, action string) routing.Handler {
 		user, err := user.GetRole(id)
 		if err != nil {
 			debug.Log(err.Error())
-			return routing.NewHTTPError(http.StatusInternalServerError, dict.T(c,"Problem with getting user's information"))
+			return routing.NewHTTPError(http.StatusUnauthorized, dict.T(c,"Problem with getting user's information"))
 		}
 
 		roles, ok := app.Acl[user.Role]

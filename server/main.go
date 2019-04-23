@@ -92,6 +92,7 @@ func main() {
 	routes.ServeAuthResource(api)
 	routes.ServeActivityResource(api)
 	routes.ServeDirectorResource(api)
+	routes.ServeCustomerResource(api)
 	http.Handle("/", router)
 	errServe := http.ListenAndServe(":8000", nil)
 	if errServe != nil {

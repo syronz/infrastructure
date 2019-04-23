@@ -1,63 +1,11 @@
 package mysql
 
 import (
-	"fmt"
-	"github.com/davecgh/go-spew/spew"
-	"github.com/syronz/infrastructure/server/utils/debug"
+	"github.com/syronz/ftth/utils/debug"
 	logrus "github.com/Sirupsen/logrus"
 )
 // Test function for implement select
 //
-// TODO: Delete this function after implemented inside controllers
-func (p *DBT) TestSelect() {
-
-	_, err := DB.Exec("DROP TABLE IF EXISTS users;")
-	if err != nil {
-		fmt.Println(",,,,,,,,,,,,,,,,,,,,,,,,",err.Error())
-	}
-
-	stmt, err := DB.Prepare(`CREATE TABLE users2 (
-		id int(6) NOT NULL AUTO_INCREMENT,
-		PRIMARY KEY(id)
-	) ENGINE=InnoDB DEFAULT CHARSET=latin1;`)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-
-	_, err = stmt.Exec()
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		fmt.Println("Table created successfully..")
-	}
-
-	rows, err := DB.Query("SELECT * FROM test LIMIT 10")
-	if err != nil {
-		panic(err.Error())
-	}
-
-	type Tag struct {
-		ID		int		`json:"id"`
-		Name	string	`json:"name"`
-	}
-
-	var tags []Tag
-	for rows.Next() {
-		var tag Tag
-		err = rows.Scan(&tag.ID, &tag.Name)
-		if err != nil {
-			panic(err.Error())
-		}
-
-		tags = append(tags, tag)
-
-	}
-
-	spew.Dump(">><<<<<<<<<<<<<<",tags)
-
-}
-
-
 // Create Tables if not exists
 func (p *DBT) Migrate(reset bool) {
 	logger := logrus.New()
@@ -71,12 +19,36 @@ func (p *DBT) Migrate(reset bool) {
 			logger.Info("Table cities deleted successfully")
 		}
 
+		// Drop directors
+		_, err = DB.Exec("DROP TABLE IF EXISTS directors;")
+		if err != nil {
+			debug.Log(err.Error())
+		} else {
+			logger.Info("Table directors deleted successfully")
+		}
+
 		// Drop users
 		_, err = DB.Exec("DROP TABLE IF EXISTS users;")
 		if err != nil {
 			debug.Log(err.Error())
 		} else {
 			logger.Info("Table users deleted successfully")
+		}
+
+		// Drop activity
+		_, err = DB.Exec("DROP TABLE IF EXISTS activity;")
+		if err != nil {
+			debug.Log(err.Error())
+		} else {
+			logger.Info("Table activity deleted successfully")
+		}
+
+		// Drop customers
+		_, err = DB.Exec("DROP TABLE IF EXISTS customers;")
+		if err != nil {
+			debug.Log(err.Error())
+		} else {
+			logger.Info("Table customers deleted successfully")
 		}
 
 	}
@@ -127,7 +99,8 @@ func (p *DBT) Migrate(reset bool) {
 		logger.Info("Table users created successfully")
 	}
 
-	_, err = DB.Exec(`INSERT IGNORE users(name, username, 
+	// Insert data to users
+	_, err = DB.Exec(`INSERT IGNORE users(name, username,
 		password, role, city, director, language) VALUES('PLEASE DELETE',
 		'a', '$2a$10$rIHWURia91JvlGmgcopll.s7/JS8y0BDB8OLsV8J7ClX2Qi/FEeqG',
 		'admin', '*', '*', 'en');`)
@@ -138,6 +111,7 @@ func (p *DBT) Migrate(reset bool) {
 	}
 
 
+	// Create activity
 	_, err = DB.Exec(`CREATE TABLE IF NOT EXISTS activity (
 		id int(11) NOT NULL AUTO_INCREMENT,
 		created_at timestamp DEFAULT CURRENT_TIMESTAMP,
@@ -146,7 +120,7 @@ func (p *DBT) Migrate(reset bool) {
 		ip varchar(50),
 		description varchar(200),
 		primary key(id)
-	) ENGINE=ARCHIVE;`)
+	) ENGINE=ARCHIVE AUTO_INCREMENT=1000000;`)
 	if err != nil {
 		debug.Log(err.Error())
 	} else {
@@ -154,4 +128,25 @@ func (p *DBT) Migrate(reset bool) {
 	}
 
 
+	// Create custoemrs
+	_, err = DB.Exec(`CREATE TABLE IF NOT EXISTS customers (
+		id int(11) NOT NULL AUTO_INCREMENT,
+		title varchar(20) ,
+		name varchar(100) NOT NULL,
+		phone1 varchar(20) NOT NULL,
+		phone2 varchar(20) ,
+		created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+		detail varchar(200),
+		primary key(id),
+		UNIQUE KEY username_UNIQUE (phone1)
+	) ENGINE=InnoDB AUTO_INCREMENT=10000;`)
+	if err != nil {
+		debug.Log(err.Error())
+	} else {
+		logger.Info("Table customers created successfully")
+	}
+
+
 }
+
+

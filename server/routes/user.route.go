@@ -16,5 +16,4 @@ func ServeUserResource(rg *routing.RouteGroup){
 	rg.Get("/users",controllers.AclChecker("users", "read"), r.List)
 	rg.Get("/users/<id>",controllers.AclChecker("users", "read"), r.Get)
 
-
 }
