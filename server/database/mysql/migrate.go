@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"github.com/syronz/ftth/utils/debug"
+	"github.com/syronz/infrastructure/server/utils/debug"
 	logrus "github.com/Sirupsen/logrus"
 )
 // Test function for implement select
